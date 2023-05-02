@@ -1,0 +1,16 @@
+{% extends 'dashboard/base.html' %}
+{% block title %}Categories{% endblock %}
+{% load static %}
+{% block content %}
+
+<form id="allInputsFromValidation" class="from-horizontal" method="post" novalidate>
+    {% csrf_token %}
+    {{ form.as_p }}
+
+    <div class="card-footer">
+        <button type="submit" class="btn btn-info">Save</button>
+    </div>
+</form>
+
+
+{% endblock %}

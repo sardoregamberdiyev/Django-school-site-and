@@ -1,0 +1,34 @@
+{% extends 'dashboard/base.html' %}
+{% block title %}Recipes{% endblock %}
+{% load static %}
+{% block content %}
+
+<div class="card-content table-responsive table-full-width">
+    <table class="table table-hover">
+        <thead>
+            <th>Key</th>
+            <th>Value</th>
+
+        </thead>
+        <tbody>
+            <tr>
+                <td>Id</td>
+                <th>{{one.id}}</th>
+            </tr>
+            <tr>
+                <td>Name</td>
+                <th>{{one.name}}</th>
+            </tr>
+              <tr>
+                <td>Text</td>
+                <th>{{ one.text}}</th>
+            </tr>
+                 <tr>
+                <td>Image</td>
+                <td>{{ one.img }}</td>
+            </tr>
+        </tbody>
+    </table>
+</div>
+
+{% endblock %}

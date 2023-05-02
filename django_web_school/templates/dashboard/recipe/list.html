@@ -1,0 +1,59 @@
+{% extends 'dashboard/base.html' %}
+{% block title %}Recipes{% endblock %}
+{% load static %}
+{% block content %}
+
+
+<div class="card-header">
+	<h4 class="card-title">Risept listi</h4>
+	<p class="category">Bu yerni to'ldiring</p>
+</div>
+<div class="card-content table-responsive table-full-width">
+	<table class="table">
+		<thead>
+			<th>№</th>
+			<th>Name</th>
+			<th>Image</th>
+			<th>Text</th>
+			<th>Category</th>
+		</thead>
+		<tbody>
+			{% for i in all %}
+			<tr>
+				<td>{{ forloop.counter }}</td>
+				<td>{{ i.name }}</td>
+				<td><a href="http://127.0.0.1:8000/media/{{ i.img }}" target="_blank">{{ i.img }}</a></td>
+				<td>{{ i.text }}</td>
+				<td>{{ i.ctg_name }}</td>
+				<td class="td-actions text-right">
+					<a href="{% url 'rec_detail' pk=i.id %}" rel="tooltip" title="View Profile" class="btn btn-info btn-simple btn-xs">
+						<i class="ti-user"></i>
+					</a>
+					<a href="{% url 'rec_edit' pk=i.id %}" rel="tooltip" title="Edit Profile" class="btn btn-success btn-simple btn-xs">
+						<i class="ti-pencil-alt"></i>
+					</a>
+					<a href="{% url 'rec_del' pk=i.id %}" rel="tooltip" title="Remove" class="btn btn-danger btn-simple btn-xs">
+						<i class="ti-close"></i>
+					</a>
+				</td>
+			</tr>
+			{% endfor %}
+
+		</tbody>
+	</table>
+	<a href="{% url 'rec_add' %}"><button class="btn btn-info btn-fill btn-wd ">Ritsep qushish</button></a>
+</div>
+
+
+{% endblock %}
+
+
+
+
+
+
+
+
+
+
+

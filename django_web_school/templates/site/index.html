@@ -1,0 +1,559 @@
+{% extends 'site/base.html' %}
+{% block title %}HOME{% endblock %}
+{% block content %}
+{% load static %}
+
+
+
+  <!-- 
+    - #HEADER
+  -->
+
+  <header class="header" data-header>
+    <div class="container">
+
+      <div class="overlay" data-overlay></div>
+
+      <a href="#" class="logo">
+        <img src="{% static 'site/assets/images/logo.png' %}" alt="School-255">
+      </a>
+
+      <button class="menu-open-btn" data-menu-open-btn>
+        <ion-icon name="menu-outline"></ion-icon>
+      </button>
+
+      <nav class="navbar" data-navbar>
+
+        <button class="menu-close-btn" data-menu-close-btn>
+          <ion-icon name="close-outline"></ion-icon>
+        </button>
+
+        <a href="#" class="logo">
+          <img src="{% static 'site/assets/images/logo.png' %}" alt="School-255">
+        </a>
+
+        <ul class="navbar-list">
+
+          <li>
+            <a href="#" class="navbar-link">Home</a>
+          </li>
+
+          <li>
+            <a href="#about" class="navbar-link">About</a>
+          </li>
+
+          <li>
+            <a href="#departments" class="navbar-link">Service</a>
+          </li>
+
+          <li>
+            <a href="#instructor" class="navbar-link">Blog</a>
+          </li>
+
+          <li>
+            <a href="#contact" class="navbar-link">Contact</a>
+          </li>
+          <!-- Language -->
+
+          <li>
+            <a href="{% url 'home-eng' %}" class="lang activelang">ENG</a>
+            <a href="{% url 'uz' %}" class="lang">UZB</a>
+          </li>
+
+
+        </ul>
+        
+        <a href="https://t.me/school_255" style="color: white;">
+          <button class="btn btn-secondary">
+            Channel
+          </button>
+        </a>
+
+      </nav>
+
+    </div>
+  </header>
+
+
+  <main>
+    <article>
+
+      <!-- 
+        - #HERO
+      -->
+
+      <section class="hero">
+        <div class="container">
+
+          <figure class="hero-banner">
+            <img src="{% static 'site/assets/images/hero-banner.png' %}" alt="Logo">
+          </figure>
+
+          <div class="hero-content">
+
+            <h1 class="h1 hero-title">School-255</h1>
+
+            <p class="section-text">
+              Quality education, qualified teachers and a great future. Build your future with us!
+              Tashkent city, Yashnabad district, Tuzel 2, 29a
+            </p>
+            <a href="#about">
+              <button class="btn btn-primary">Read more</button>
+            </a>
+          </div>
+
+        </div>
+      </section>
+
+
+      <!-- 
+        - #ABOUT
+      -->
+
+      <section class="about" id="about">
+        <div class="container">
+
+          <figure class="about-banner">
+
+            <img src="{% static 'site/assets/images/about-banner.png' %}" alt="Eduland students" class="about-img">
+
+            <img src="{% static 'site/assets/images/about-vector.svg' %}" alt="Vector line art" class="vector-line">
+            <a href="{% static 'site/School 255.mp4' %}">
+            </a>
+          </figure>
+
+          <div class="about-content">
+
+            <h2 class="h2 about-title">We Help to Create Possibility & Success in Your Career!</h2>
+
+            <p class="section-text">
+              Continually administrate process-centric human capital rather than bleeding-edge methodologies.
+              Distinctively supply
+              accurate methods of empowerment before.
+            </p>
+
+            <a href="{% static 'site/School 255.mp4' %}">
+              <button class="btn btn-primary">View the gallery</button>
+            </a>
+
+          </div>
+
+        </div>
+      </section>
+
+      <!-- 
+        - #DEPARTMENTS
+      -->
+
+      <section class="departments" id="departments">
+        <div class="container">
+
+          <img src="{% static 'site/assets/images/departmets-vector.svg' %}" alt="Vector line art" class="vector-line">
+
+          <h2 class="h2 departments-title">News</h2>
+
+          <ul class="departments-list">
+
+
+
+            {% for i in recipes %}
+
+                  <li>
+                    <div class="departments-card">
+
+                      <a href="https://t.me/school_255" class="card-banner">
+                        <figure>
+                          <img src="{{ i.img.url }}" alt="Artificial Intelligence">
+                        </figure>
+                      </a>
+
+                      <h3 class="h3 card-title">{{ i.name }}</h3>
+
+                      <p class="card-text">
+                        {{ i.text }}
+                      </p>
+
+                      <a href="https://t.me/school_255" class="card-link">
+                        <span>Learn More</span>
+
+                        <ion-icon name="arrow-forward"></ion-icon>
+                      </a>
+                    </div>
+                  </li>
+
+            {% endfor %}
+
+
+          </ul>
+          <a href="https://t.me/school_255">
+            <button class="btn btn-primary">View all news</button>
+          </a>
+        </div>
+      </section>
+
+      <!-- 
+        - #INSTRUCTOR
+      -->
+
+      <section class="instructor" id="instructor">
+        <div class="container">
+
+          <img src="{% static 'site/assets/images/instructor-vactor-1.svg' %}" alt="Vector line art" class="vector-line">
+
+          <div class="title-wrapper">
+            <h2 class="h2 instructor-title">School leaders</h2>
+
+            <!-- <button class="btn btn-primary">View All Captains</button> -->
+          </div>
+
+          <ul class="instructor-list">
+
+            <li>
+              <div class="instructor-card">
+
+                <figure class="card-banner">
+                  <img src="{% static 'site/assets/images/instructor-1.png' %}" alt="Shaapir Prio">
+                </figure>
+
+                <a href="#">
+                  <h3 class="card-title">Shaapir Prio</h3>
+                </a>
+
+                <p class="card-subtitle">School president</p>
+
+                <ul class="card-social-list">
+
+                  <li>
+                    <a href="#" class="card-social-link">
+                      <ion-icon name="logo-google"></ion-icon>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" class="card-social-link">
+                      <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" class="card-social-link">
+                      <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" class="card-social-link">
+                      <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="instructor-card">
+
+                <figure class="card-banner">
+                  <img src="{% static 'site/assets/images/instructor-2.png' %}" alt="Sellina">
+                </figure>
+
+                <a href="#">
+                  <h3 class="card-title">Sellina</h3>
+                </a>
+
+                <p class="card-subtitle">Director</p>
+
+                <ul class="card-social-list">
+
+                  <li>
+                    <a href="#" class="card-social-link">
+                      <ion-icon name="logo-google"></ion-icon>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" class="card-social-link">
+                      <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" class="card-social-link">
+                      <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" class="card-social-link">
+                      <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </div>
+            </li>
+
+            <li>
+              <div class="instructor-card">
+
+                <figure class="card-banner">
+                  <img src="{% static 'site/assets/images/instructor-3.png' %}" alt="John Smith">
+                </figure>
+
+                <a href="#">
+                  <h3 class="card-title">John Smith</h3>
+                </a>
+
+                <p class="card-subtitle">Assistant Director</p>
+
+                <ul class="card-social-list">
+
+                  <li>
+                    <a href="#" class="card-social-link">
+                      <ion-icon name="logo-google"></ion-icon>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" class="card-social-link">
+                      <ion-icon name="logo-twitter"></ion-icon>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" class="card-social-link">
+                      <ion-icon name="logo-instagram"></ion-icon>
+                    </a>
+                  </li>
+
+                  <li>
+                    <a href="#" class="card-social-link">
+                      <ion-icon name="logo-linkedin"></ion-icon>
+                    </a>
+                  </li>
+
+                </ul>
+
+              </div>
+            </li>
+
+          </ul>
+
+          <img src="{% static 'site/assets/images/instructor-vactor-2.svg' %}" alt="Vector line art" class="vector-line">
+
+        </div>
+      </section>
+
+
+      <!-- 
+        - #CTA
+      -->
+
+      <section class="cta">
+        <div class="container">
+
+          <div class="title-wrapper">
+
+            <h2 class="h2 cta-title">
+              <span>
+                Our bot.
+                Feel free to have any questions.
+              </span>
+
+              <img src="{% static 'site/assets/images/cta-vector.svg' %}" alt="Vector arrow art" class="vector-line">
+            </h2>
+
+            <div class="cta-btn">
+              <a href="https://t.me/school_255_bot">
+                <button class="btn btn-primary">Register Now</button>
+              </a>
+            </div>
+          </div>
+
+          <div class="cta-banner"></div>
+
+        </div>
+      </section>
+
+    </article>
+  </main>
+
+  <!-- 
+    - #FOOTER
+  -->
+
+  <footer class="footer" id="contact">
+
+    <div class="footer-top">
+      <div class="container">
+
+        <div class="footer-brand">
+
+          <a href="#" class="logo">
+            <img src="{% static 'site/assets/images/contact.png' %}" alt="Eduland logo">
+          </a>
+
+          <p class="footer-text">
+            Go ahead to your dreams :)
+          </p>
+
+          <ul class="social-list">
+
+            <li>
+              <a href="mailto:school255@gmail.com" class="social-link">
+                <ion-icon name="logo-google"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-twitter"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-instagram"></ion-icon>
+              </a>
+            </li>
+
+            <li>
+              <a href="#" class="social-link">
+                <ion-icon name="logo-facebook"></ion-icon>
+              </a>
+            </li>
+
+          </ul>
+
+        </div>
+
+        <div class="footer-link-box">
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-link-title">School services</p>
+            </li>
+
+            <li>
+              <a href="tel:+998712975791" class="footer-link">+998 (71) 297-57-91</a>
+            </li>
+
+            <li>
+              <a href="mailto:school255@gmail.com" class="footer-link">school_255@gmail.com</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Monday - Saturday</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">9:00 - 18:00</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-link-title">Contact</p>
+            </li>
+
+            <li class="contact-item">
+              <span>Call: </span>
+
+              <a href="tel:+998712975791" class="footer-link">+998 (71) 297-57-91</a>
+            </li>
+
+            <li class="contact-item">
+              <span>Telegram: </span>
+
+              <a href="https://t.me/school_255" class="footer-link">School-255</a>
+            </li>
+
+            <li class="contact-item">
+              <span>Address: </span>
+
+              <a href="#" class="contact-link">
+                <address>Tuzel-2 29a, Yashnabad district</address>
+              </a>
+            </li>
+
+          </ul>
+         
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-link-title">Compani services</p>
+            </li>
+
+            <li>
+              <a href="tel:+998880074181" class="footer-link">+998 (88) 007-41-81</a>
+            </li>
+
+            <li>
+              <a href="welkin@gmail.com" class="footer-link">sardorbuzines@gmail.com</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">Monday - Saturday</a>
+            </li>
+
+            <li>
+              <a href="#" class="footer-link">10:00 - 19:00</a>
+            </li>
+
+          </ul>
+
+          <ul class="footer-list">
+
+            <li>
+              <p class="footer-link-title">Contact</p>
+            </li>
+
+            <li class="contact-item">
+              <span>Call : </span>
+
+              <a href="tel:+998943151337" class="footer-link">+998 (94) 315-13-37</a>
+            </li>
+
+            <li class="contact-item">
+              <span>Telegram : </span>
+
+              <a href="https://t.me/Welkin_GR" class="footer-link">Welkin Group</a>
+            </li>
+
+          </ul>
+
+        </div>
+
+      </div>
+    </div>
+
+    <div class="footer-bottom">
+      <div class="container">
+        <p class="copyright">
+          &copy; 2023 <a href="https://t.me/school_255">School-255</a>. All right reserved
+        </p>
+      </div>
+    </div>
+
+  </footer>
+
+
+
+  <!-- 
+    - #GO TO TOP
+  -->
+
+  <a href="#top" class="go-top" data-go-top>
+    <ion-icon name="arrow-up"></ion-icon>
+  </a>
+
+
+{% endblock %}
+
+

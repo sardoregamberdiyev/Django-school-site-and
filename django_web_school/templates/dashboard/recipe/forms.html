@@ -1,0 +1,12 @@
+{% extends 'dashboard/base.html' %}
+{% block title %}Recipes{% endblock %}
+{% load static %}
+{% block content %}
+
+<form id="allInputsFormValidation" class="form-horizontal" enctype="multipart/form-data" method="post">
+    {% csrf_token %}
+    {{ form.as_p }}
+    <button class="btn btn-succes btn-fill btn-wd" type="submit">Save</button>
+</form>
+
+{% endblock %}

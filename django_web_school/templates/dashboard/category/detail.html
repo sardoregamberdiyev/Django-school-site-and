@@ -1,0 +1,39 @@
+{% extends 'dashboard/base.html' %}
+{% block title %}Categories{% endblock %}
+{% load static %}
+{% block content %}
+
+<div class="card-header">
+    <h4 class="card-title">{{ one.content }}</h4>
+</div>
+
+<div class="card-content table-responsive table-full-width">
+<table class="table table-hover">
+    <thead>
+        <th>Key</th>
+        <th>Value</th>
+
+    </thead>
+    <tbody>
+        <tr>
+            <td>Id</td>
+            <th>{{one.id}}</th>
+        </tr>
+        <tr>
+            <td>Content</td>
+            <th>{{one.content}}</th>
+        </tr>
+          <tr>
+            <td>Slug</td>
+            <th>{{ one.slug}}</th>
+
+        </tr>
+
+    </tbody>
+</table>
+<a href="{% url 'ctg_edit' pk=one.id %}"><button class="btn btn-success btn-fill btn-wd">Edit</button></a>
+<a href="{% url 'ctg_del' pk=one.id %}"><button class="btn btn-danger btn-fill btn-wd">Delete</button></a>
+<!--<button class="btn btn-info btn-fill btn-wd ">Category qo'shish</button>-->
+</div>
+
+{% endblock %}
